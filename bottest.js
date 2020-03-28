@@ -5,28 +5,26 @@ const fs = require('fs');
 const ytdl = require('ytdl-core');
 const ffmpeg = require('ffmpeg');
 const Canvas = require('canvas');
-var mysql = require('mysql');
-const Youtube = require('./YT.js')
-////const mongoUrl = `mongodb://${encodeURIComponent(settings.db.user)}:${encodeURIComponent(settings.db.password)}@${encodeURIComponent(settings.db.host)}:${encodeURIComponent(settings.db.port)}/?authMechanism=DEFAULT&authSource=admin`;
 
 //NjIyNzQ2MzEyOTE5NDgyMzc4.XYOZZw.tgcrKbiXrnuTfni5vvAFYWg2LOs
 //NjIzOTgwMDU3OTk1NzcxOTA0.XYprzA.WoDyStRNTarTdHBU_2cWNVWb4ZU
-const token = "NjIyNzQ2MzEyOTE5NDgyMzc4.XY4qEg.TWbJvb4pVgO5CtJpvCjuAJ2Z6Yc"
-var prefix = 'g'
-ver = '0.5' //version
+
+
+const token = "NjIzOTgwMDU3OTk1NzcxOTA0.XYprzA.WoDyStRNTarTdHBU_2cWNVWb4ZU"
+var prefix = 't'
+ver = '0.4.1' //version
 
 //log
 client.on('ready',  () => {
 
 console.log(`${new Date()}`);
 console.log('Starting...');
-  console.log('Petrovich BETA '+ ver);
+  console.log('Petrivna TEST ' + ver);
   console.log('Loading discord.js...');
   console.log('Loading modules...');
 console.log('Copyright BR1ZE 2019');
 console.log('Done. Bot is online!');
-//client.user.setActivity('ЙДИ ГРАЙ СВІЙ ПАБГ'); 
-client.user.setActivity(prefix + 'p + link / BETA ' + ver); 
+client.user.setActivity(prefix + 'p + link / C₿ ' + ver); 
 console.log('=============================');
 });
 client.once('reconnecting', () => {
@@ -38,103 +36,25 @@ client.once('disconnect', () => {
 
 
 
-//DB
-/*
-Username: tBTMEf3fI5
-Database name: tBTMEf3fI5
-Password: oUbiEh3sLB
-Server: remotemysql.com
-Port: 3306
-*/
-
-const connection = mysql.createConnection({
-  host: 'remotemysql.com',
-  user: 'tBTMEf3fI5',
-  password: 'oUbiEh3sLB',
-  database: 'tBTMEf3fI5'
-});
-const con=connection;
-//**Con Start
-connection.connect((err) => {
-  if (err) throw err;
-  console.log('Connected to DB!');
-});
-
-con.end((err) => {
- 
-});
+//NjIyNzQ2MzEyOTE5NDgyMzc4.XYOZZw.tgcrKbiXrnuTfni5vvAFYWg2LOs
+//NjIzOTgwMDU3OTk1NzcxOTA0.XYprzA.WoDyStRNTarTdHBU_2cWNVWb4ZU
 
 
-//var path = require('path')
-
-// Draw cat with lime helmet
-
-//
-/*
-//DB
-client.on("voiceStateUpdate", (old_member, new_member) => {
-  
-    let channel = client.channels.find(val => val.name == 'Apex');
-    let check = channel.members.find(val => val.user.username == new_member.user.username);
-
-    if (check != null) {
-        console.log(new_member.user.username+' Connected to ' + channel.name);
-
-    //gamer_id: '${message.guild.id}-${message.author.id}',
-   // user: message.author.id,
-   // guild: message.guild.id,
-    //points: 0,
-   // time: 1
-  
-    } else {
-        console.log(new_member.user.username +' Not connected to ' + channel.name);
-    }
-});
-Чекаєм один канал
-*/
-
-//connect log
 
 
-client.on('voiceStateUpdate', (oldMember, newMember) => {
-  let newUserChannel = newMember.voiceChannel
-  let oldUserChannel = oldMember.voiceChannel
 
 
-  if (oldUserChannel === undefined && newUserChannel !== undefined) {
 
-            console.log(newMember.user.username + ' Connected to ' + newMember.voiceChannel.name+' '+`${new Date()}`);
-
-  };
-   
-   if(oldUserChannel === newUserChannel){
-  	console.log(newMember.user.username + ' Mutes/Unmutes ' + oldMember.voiceChannel.name+' '+`${new Date()}`);
-return;//вертай взад
-  };
-
-  if(oldUserChannel !== undefined && newUserChannel !== undefined){
-
-console.log(newMember.user.username + ' Reconnected to ' + oldMember.voiceChannel.name+' '+`${new Date()}`);
-
-  }
-
-  else if (newUserChannel === undefined){
-
-  			console.log(newMember.user.username + ' Leaved ' + oldMember.voiceChannel.name+' '+`${new Date()}`);
-
-  }
-})
-//connect log
 
 
 
 
 //Commands
 // set message listener 
-	/* 
+
 client.on('message', message => {
     if(message.author === client.user) return;
-   
+	/*    */
     if(message.content === (prefix + 'хай')) {
         message.channel.send('Здарова ' + message.author.username + '!');
      }
@@ -145,9 +65,6 @@ client.on('message', message => {
 
 
 });
-*/
-
-
 //delete
 /*
 let amount = !!parseInt(message.content.split(' ')[1]) ? parseInt(message.content.split(' ')[1]) : parseInt(message.content.split(' ')[2])
@@ -314,50 +231,27 @@ client.on('guildMemberAdd', async member => {
 
 
 
+
+
 //Moderator
-client.on('guildMemberAdd', async member => {
+client.on('guildMemberAdd', member => {
   console.log(member.user.username + ' + 1 Gamer!')
-  //var role1 = member.guild.roles.find('name', '🎮GAMER🎮') 
-  //role2 = member.guild.roles.find('name', 'Мєлкий')
-  //member.addRole(role1)
-//member.addRole(role2)
-const canvas = Canvas.createCanvas(700, 250);
-const ctx = canvas.getContext('2d');
-
-
-const background = await Canvas.loadImage('./background2.jpg');//TODO client on async member
-ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-
-ctx.strokeStyle = '#74037b';
-	ctx.strokeRect(0, 0, canvas.width, canvas.height);
-
-	// Slightly smaller text placed above the member's display name
-	ctx.font = '28px sans-serif';
-	ctx.fillStyle = '#ffffff';
-	ctx.fillText('Велком ту зе сервер мазафака!', canvas.width / 2.5, canvas.height / 3.5);
-
-	// Add an exclamation point here and below
-	ctx.font = applyText(canvas, member.displayName);
-	ctx.fillStyle = '#ffffff';
-	ctx.fillText(member.displayName, canvas.width / 2.5, canvas.height / 1.8);
-
-	const avatar = await Canvas.loadImage(member.user.displayAvatarURL);
-	// Move the image downwards vertically and constrain its height to 200, so it's a square
-	ctx.drawImage(avatar, 25, 25, 200, 200);
-
-
-	const attachment = new Discord.Attachment(canvas.toBuffer(), 'text.jpg');
-  member.guild.channels.get('609074575828975758').send(attachment) 
+  var role1 = member.guild.roles.find('name', '🎮GAMER🎮') 
+  role2 = member.guild.roles.find('name', 'Мєлкий')
+  member.addRole(role1)
+member.addRole(role2)
+// Сповіщення
+  member.guild.channels.get('557602253809385478').send('Здарова ' + member.user.username + ', Як житуха?') 
 });
   
-/*
+/*  
 client.on('message', message => {
 if(message.content.startsWith('!' + "видали")){
     if(!message.member.hasPermission("MANAGE_MESSAGES"))return(message.reply('you need to have ' + MANAGE_MESSAGES +' permission to do that'))//если человек не может удалять сообщения, то и эту команду выполнить не сможет
     //var args = message.content.slice(prefix.content).trim().split(/ +/g);
 	
-//	let howmanydelete = message.content.slice(8,10)//сколько хотим удалить, элемент с индексом 1 в массиве args
-   // if(!howmanydelete)return(message.reply("please enter how many messages you want to delete"))//если не написали сколько удалить, то ответит "введи сколько удалить"
+	let howmanydelete = message.content.slice(8,10)//сколько хотим удалить, элемент с индексом 1 в массиве args
+    if(!howmanydelete)return(message.reply("please enter how many messages you want to delete"))//если не написали сколько удалить, то ответит "введи сколько удалить"
 
     if(howmanydelete < 1)return(message.reply("please enter number more than 1"))//если меньше одного, то сами видите что ответит
     if(howmanydelete > 100)return(mesasge.reply("please enter number lower than 100"))//почему именно 100? Такой лимит у api Discord-а для ботов
@@ -369,8 +263,8 @@ if(message.content.startsWith('!' + "видали")){
 		//	setTimeout(() => { clearInterval(timerId); message.channel.bulkDelete (1)}, 7000);   
 	 
 }})
-*/
 
+*/
 
 
 /**/
@@ -389,7 +283,7 @@ client.on('message', message => {
 	var n = parseInt( Math.random()*4 );
 	console.log(n);	
 	if (n==0){message.channel.bulkDelete(1);
-            message.channel.sendMessage('Зима близько🤖!! Це довга, темна, холодна ніч. В людях прокидається звір. Та боятись треба не живих...https://tenor.com/view/whitewalkers-gif-9012602');
+            message.channel.sendMessage('Зима близько!!! Це довга, темна, холодна ніч. В людях прокидається звір. Та боятись треба не живих...https://tenor.com/view/whitewalkers-gif-9012602');
 		return;	}
 	if (n==1){message.channel.bulkDelete(1);
             message.channel.sendMessage('Зима близько! Сніг випадає глибиною в тридцять метрів! Льодяний вітер дує з півночі! Сонце сідає на довгі роки, а діти народжуються і помирають в темряві!https://tenor.com/view/game-of-thrones-white-walker-walk-fire-flames-gif-4223785');	
@@ -552,8 +446,10 @@ function play(guild, song) {
 
 
 client.on('message', message => {
-    if (message.content.startsWith ('1')) {
-            	message.react('✅');  
+    if (message.content.startsWith ('ResTern')) {
+            message.channel.sendMessage('RODIPIT');
+			timerId = setInterval(() => message.channel.sendMessage('Хииииииииии!'), 2000);
+			setTimeout(() => { clearInterval(timerId);  message.channel.sendMessage('Хииииииииии!') }, 2000);   
     }
 });
 
@@ -609,11 +505,11 @@ let timerId = setInterval(() => client.channels.get('557602253809385478').sendMe
 var firstCall = true;
 client.on('message', message => {
 	if(message.content === ('RODIPIT')) {
-	message.channel.send('rodik!')  
+	message.channel.send('Ti Pidar!')  
 	}
 
 		 if((message.member.id == '500002237083287552')&&(firstCall == true)){
-      message.channel.send('об`явився!');
+      message.channel.send('Підар об`явився!');
 	  firstCall = false;
 }	  
 })
@@ -628,15 +524,6 @@ client.on('message', message => {
             break;
     }
 });
-client.on('message', message => {
-    switch(message.content.toUpperCase()) {
-        case '!DELETE 5':
-		 message.channel.bulkDelete(5);
-         message.channel.sendMessage('Deleted 5 msgs');
-            break;
-    }
-});
-
 
 // Turn bot off (destroy)
 function resetBot(channel) {
