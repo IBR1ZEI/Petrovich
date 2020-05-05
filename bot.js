@@ -9,7 +9,7 @@ var mysql = require('mysql');
 const Youtube = require('./YT.js')
 ////const mongoUrl = `mongodb://${encodeURIComponent(settings.db.user)}:${encodeURIComponent(settings.db.password)}@${encodeURIComponent(settings.db.host)}:${encodeURIComponent(settings.db.port)}/?authMechanism=DEFAULT&authSource=admin`;
 
-const token = ""
+const token = "NzA1Nzc1MzI0MzAxODg1NTIy.XqxvLg.ti-nYqZzesX4GFc2uPcJuIWEa84"
 var prefix = 'g'
 ver = '0.5' //version
 
